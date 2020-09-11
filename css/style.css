@@ -18,6 +18,7 @@ body{
     left: 5px;
     background-color: teal;
 }
+
 .content::after{
     content: "";
     position: absolute;
@@ -29,8 +30,56 @@ body{
     z-index: -1;
     animation: turn-border 3s infinite linear;
 }
+
+.box-2{
+    width: 250px;
+    height: 250px;
+    position: relative;
+    background-color: darkcyan;
+}
+
+.box-2::after{
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 260px;
+    height: 260px;
+    background: linear-gradient(0, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    z-index: -1;
+    animation: bg-gradient-border 3s infinite linear;
+}
+
+
 @keyframes turn-border{
     100%{
         transform: rotate(360deg);
+    }
+}
+
+@keyframes bg-gradient-border{
+    12.5%{
+        background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+    25%{
+        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+    37.5%{
+        background: linear-gradient(135deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+    50%{
+        background: linear-gradient(180deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+    62.5%{
+        background: linear-gradient(225deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+    75%{
+        background: linear-gradient(270deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+    87.5%{
+        background: linear-gradient(315deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+    100%{
+        background: linear-gradient(360deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
     }
 }
