@@ -1,0 +1,36 @@
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.box{
+    width: 260px;
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+}
+.content{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: teal;
+}
+.content::after{
+    content: "";
+    position: absolute;
+    top: -75px;
+    left: -75px;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    z-index: -1;
+    animation: turn-border 3s infinite linear;
+}
+@keyframes turn-border{
+    100%{
+        transform: rotate(360deg);
+    }
+}
