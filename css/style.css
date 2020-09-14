@@ -3,6 +3,7 @@ body{
     place-items: center;
     height: 100vh;
     overflow: hidden;
+    background-color: #222;
 }
 .box, .box-3{
     width: 260px;
