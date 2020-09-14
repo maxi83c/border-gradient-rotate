@@ -1,14 +1,92 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Práctica 1 - Reloj CSS</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <div class="box">
-            <div class="content">dos div con rotación</div>
-        </div>
-        <div class="box-2">1 div modificando el bg</div>
-    </body>    
-</html>
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.box, .box-3{
+    width: 260px;
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+}
+.content{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: teal;
+}
+.content::after, .box-3::before{
+    content: "";
+    position: absolute;
+    top: -75px;
+    left: -75px;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    z-index: -1;
+    animation: turn-border 3s infinite linear;
+}
+
+.box-2, .box-3::after{
+    width: 250px;
+    height: 250px;
+    position: relative;
+    background-color: darkcyan;
+}
+.box-2::after{
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 260px;
+    height: 260px;
+    background: linear-gradient(0, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    z-index: -1;
+    animation: bg-gradient-border 3s infinite linear;
+}
+.box-3::after{
+    content: "Content in .box-3::after";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+.content, .box-2, .box-3::after{
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 250px;
+}
+@keyframes turn-border{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes bg-gradient-border{
+    12.5%{
+        background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+    25%{
+        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+    37.5%{
+        background: linear-gradient(135deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+    50%{
+        background: linear-gradient(180deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+    62.5%{
+        background: linear-gradient(225deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+    75%{
+        background: linear-gradient(270deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+    87.5%{
+        background: linear-gradient(315deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+    100%{
+        background: linear-gradient(360deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+}
